@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :songs
   require 'sidekiq/web'
 
   scope :monitoring do
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
         get :me
         post :create
       end
+      resources :books
     end
   end
 end
