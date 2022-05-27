@@ -29,7 +29,11 @@ Rails.application.routes.draw do
         get :me
         post :create
       end
-      resources :books
+      namespace :songs do
+        get :my_songs
+        get :index
+      end
+      resources :songs
     end
   end
 end

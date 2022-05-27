@@ -1,6 +1,6 @@
 module Songs
   def self.new_song(params, current_user)
-    book = current_user.songs.new(params)
+    song = current_user.songs.new(params)
     return ServiceContract.error("Error saving song") unless song.save
     ServiceContract.success(song)
   end
