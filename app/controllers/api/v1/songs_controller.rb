@@ -27,9 +27,9 @@ module Api
           render_success(payload: payload)
       end
 
-      # DELETE /api/v1/songs:id
+      # DELETE /api/v1/songs/:id
       def destroy
-        result = Songs.destroy_song(song_params[:id], @current_user)
+        result = Songs.destroy_song(params[:id], @current_user)
         render_error(errors: "There was a problem deleting a song", status: 400) and return unless result.success?
         render_success(payload: nil)
       end
