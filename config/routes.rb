@@ -30,6 +30,9 @@ Rails.application.routes.draw do
         get :me
         post :create
       end
+      namespace :friendship do
+        post :add_friend
+      end
       namespace :songs do
         get :my_songs
         delete :destroy
@@ -38,6 +41,7 @@ Rails.application.routes.draw do
         put :update
       end
       resources :songs
+
     end
   end
 end
