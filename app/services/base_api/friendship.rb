@@ -15,13 +15,11 @@ module BaseApi
         ServiceContract.success(friend)
       end
 
-
       # Handles removing a friend
-      # ToDo: Remove friend association
-      
-  
-      
+      def self.remove_friend(friend_id, current_user_id)
+        Friendship.find_by(user_id: current_user_id, friend_id: friend_id).destroy
+        Friendship.find_by(user_id: friend_id, friend_id: current_user_id).destroy
+      end
 
-    
     end
   end

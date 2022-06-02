@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       end
       namespace :friendship do
         post :add_friend
+        delete :remove_friend
       end
       namespace :songs do
         get :my_songs
