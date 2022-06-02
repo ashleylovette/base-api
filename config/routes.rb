@@ -42,7 +42,6 @@ Rails.application.routes.draw do
         put :update
       end
       resources :songs
-
     end
   end
 end
