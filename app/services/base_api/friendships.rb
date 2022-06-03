@@ -2,7 +2,7 @@
 
 module BaseApi
  
-    module Friendship
+    module Friendships
       # Handles adding a friend
 
       def self.save_friend(friend_id, current_user_id)
@@ -17,6 +17,7 @@ module BaseApi
 
       # Handles removing a friend
       def self.remove_friend(friend_id, current_user_id)
+        byebug
         Friendship.find_by(user_id: current_user_id, friend_id: friend_id).destroy
         Friendship.find_by(user_id: friend_id, friend_id: current_user_id).destroy
       end

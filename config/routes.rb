@@ -30,7 +30,7 @@ Rails.application.routes.draw do
         get :me
         post :create
       end
-      namespace :friendship do
+      namespace :friendships do
         post :add_friend
         delete :remove_friend
       end
