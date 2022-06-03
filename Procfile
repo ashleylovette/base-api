@@ -1,1 +1,2 @@
-web: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
+web: bundle exec puma -t 16:16 -p ${PORT:-3000}
+release: bundle exec rake db:migrate
