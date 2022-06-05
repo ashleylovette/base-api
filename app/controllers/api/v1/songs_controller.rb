@@ -8,7 +8,7 @@ module Api
       end
 
       # POST /api/v1/songs
-      def create 
+      def create
         result = Songs.new_song(song_params, @current_user)
           render_error(errors: "There was a problem creating a new song", status: 400) and return unless result.success?
           payload = {
@@ -34,7 +34,7 @@ module Api
         render_success(payload: nil)
       end
       
-      # user songs - get current user songs
+      # GET /api/vi/songs/my_songs
       def my_songs 
         render_success(payload: SongBlueprint.render_as_hash(@current_user.songs))
       end
